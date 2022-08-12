@@ -1,0 +1,24 @@
+{
+  "name": "crework-month1-week4",
+  "version": "1.0.0",
+  "description": "Validation and Error Handling to Signup and Login Module via VanillaJS",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./css/main.css",
+    "watch": "tailwindcss -i ./input.css -o ./css/main.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rshashank11/crework-month1-week4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rshashank11/crework-month1-week4/issues"
+  },
+  "homepage": "https://github.com/rshashank11/crework-month1-week4#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}

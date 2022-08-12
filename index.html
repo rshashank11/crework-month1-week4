@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to GitHub</title>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body class="bg-black1">
+    <div class="block mx-auto">
+        <div class="flex flex-col items-center">
+            <img class="w-11 h-11 my-7 opacity-80" src="./images/logo-github.png" alt="github-logo">
+            <h1 class="text-gray1 text-[24px] mb-4 font-light tracking-[-0.5px]">Sign in to Github</h1>
+            <div class="message-container text-gray1 font-extralight text-xs border-errorRed/40 border-[1px] rounded-md mb-4 bg-errorRed/20 w-[280px] p-4" >
+                <p class="message"></p>
+                <button type="button">XYZ</button>
+            </div>
+            <div class="p-4 rounded-md w-[280px] h-[210px] bg-black2 flex flex-col border-[1px] border-borderGray2">
+                <form>
+                    <label class="text-left text-gray1 mb-2 text-sm font-normal" for=" input-mail">Email
+                        address</label>
+                    <input
+                        class="text-gray1 text-xs px-[12px] py-[5px] focus:outline-none focus:border-linkBlue border-[1px] rounded-md border-borderGray1 w-full bg-black1 mt-1 mb-4 self-center block"
+                        id="input-mail">
+                    <div class="mb-2 flex items-center justify-between ">
+                        <label class="text-gray1 text-sm font-normal" for="input-pw">Password</label>
+                        <a href="#" class="text-linkBlue text-xs">Forgot password?</a>
+                    </div>
+                    <input
+                        class="text-gray1 text-xs px-[12px] py-[5px] focus:outline-none focus:border-linkBlue border-[1px] rounded-md border-borderGray1 w-full bg-black1 mt-1 mb-4 self-center block"
+                        id="input-pw">
+                    <button id="btn-sign-in"
+                        class="transistion duration-300 ease-out hover:brightness-125  w-full rounded-md py-1 px-4 text-sm text-white font-medium bg-btnGreen "
+                        type="button">Sign in</button>
+                </form>
+            </div>
+            <div class="w-[280px] text-center border-gray1/50 rounded-md border-[1px] mt-4 p-4">
+                <p class="text-sm text-gray1">New to Github? <a class="text-linkBlue" href="#"
+                        rel="noopener noreferrer">Create an account.</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/index.js"></script>
+
+</html>
