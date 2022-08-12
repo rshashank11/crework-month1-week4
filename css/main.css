@@ -551,6 +551,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -589,6 +597,10 @@ video {
   height: 2.75rem;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
 .h-\[210px\] {
   height: 210px;
 }
@@ -601,20 +613,48 @@ video {
   width: 280px;
 }
 
+.w-1 {
+  width: 0.25rem;
+}
+
 .w-full {
   width: 100%;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
   flex-direction: column;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
 }
 
 .self-center {
@@ -627,6 +667,10 @@ video {
 
 .border-\[1px\] {
   border-width: 1px;
+}
+
+.border-errorRed\/40 {
+  border-color: rgb(248 81 73 / 0.4);
 }
 
 .border-borderGray2 {
@@ -643,18 +687,13 @@ video {
   border-color: rgb(201 209 217 / 0.5);
 }
 
-.border-errorRed\/40 {
-  border-color: rgb(248 81 73 / 0.4);
-}
-
 .bg-black1 {
   --tw-bg-opacity: 1;
   background-color: rgb(13 17 23 / var(--tw-bg-opacity));
 }
 
-.bg-errorRed {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 81 73 / var(--tw-bg-opacity));
+.bg-errorRed\/20 {
+  background-color: rgb(248 81 73 / 0.2);
 }
 
 .bg-black2 {
@@ -667,12 +706,16 @@ video {
   background-color: rgb(35 134 54 / var(--tw-bg-opacity));
 }
 
-.bg-errorRed\/20 {
-  background-color: rgb(248 81 73 / 0.2);
-}
-
 .p-4 {
   padding: 1rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-\[12px\] {
@@ -695,6 +738,16 @@ video {
   padding-right: 1rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -707,18 +760,32 @@ video {
   font-size: 24px;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-light {
   font-weight: 300;
+}
+
+.font-extralight {
+  font-weight: 200;
 }
 
 .font-normal {
@@ -727,6 +794,10 @@ video {
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-thin {
+  font-weight: 100;
 }
 
 .tracking-\[-0\.5px\] {
@@ -746,6 +817,16 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-red-900 {
+  --tw-text-opacity: 1;
+  color: rgb(127 29 29 / var(--tw-text-opacity));
+}
+
+.text-errorRed {
+  --tw-text-opacity: 1;
+  color: rgb(248 81 73 / var(--tw-text-opacity));
 }
 
 .opacity-80 {

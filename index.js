@@ -1,10 +1,11 @@
 const inputMail = document.querySelector("#input-mail");
 const inputPW = document.querySelector("#input-pw");
 const btnSignIn = document.querySelector('#btn-sign-in');
-
+const btnClose = document.querySelector(".btn-close");
+const messageContainer = document.querySelector(".message-container")
 const message = document.querySelector('.message');
 
-message.style.display = "none";
+messageContainer.style.display = "none";
 
 inputMail.addEventListener("input" ,function() {
     const mailValue = inputMail.value;
@@ -27,7 +28,11 @@ inputMail.addEventListener("input" ,function() {
         const pwValue = inputPW.value;
 
         if(mailValue === "" || pwValue === "") {
-            message.style.display = "block";
+            messageContainer.style.display = "flex";
             message.innerText = "Please enter the email and password."
         }
     });
+
+btnClose.addEventListener("click", function() {
+    messageContainer.style.display = "none";
+})
