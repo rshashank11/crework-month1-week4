@@ -20,13 +20,15 @@
                 <p class="message"></p>
                 <button class="btn-close text-errorRed font-thin text-lg material-symbols-outlined" type="button">close</button>
             </div>
-            <div class="p-4 rounded-md w-[280px] h-[210px] bg-black2 flex flex-col border-[1px] border-borderGray2">
+            <div class="p-4 rounded-md w-[280px] min-h-[210px] bg-black2 flex flex-col border-[1px] border-borderGray2">
                 <form>
                     <label class="text-left text-gray1 mb-2 text-sm font-normal" for=" input-mail">Email
                         address</label>
                     <input
                         class="text-gray1 text-xs px-[12px] py-[5px] focus:outline-none focus:border-linkBlue border-[1px] rounded-md border-borderGray1 w-full bg-black1 mt-1 mb-4 self-center block"
                         id="input-mail" type="email" autocomplete="off">
+                        <p id="email-error"></p>
+
                     <div class="mb-2 flex items-center justify-between ">
                         <label class="text-gray1 text-sm font-normal" for="input-pw">Password</label>
                         <a href="#" class="text-linkBlue text-xs">Forgot password?</a>
@@ -34,6 +36,8 @@
                     <input
                         class="text-gray1 text-xs px-[12px] py-[5px] focus:outline-none focus:border-linkBlue border-[1px] rounded-md border-borderGray1 w-full bg-black1 mt-1 mb-4 self-center block"
                         id="input-pw" type="password">
+                        <p id="pw-error"></p>
+
                     <button id="btn-sign-in"
                         class="transistion duration-300 ease-out hover:brightness-125  w-full rounded-md py-1 px-4 text-sm text-white font-medium bg-btnGreen "
                         type="button">Sign in</button>
