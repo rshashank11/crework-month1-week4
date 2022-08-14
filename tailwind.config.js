@@ -12,6 +12,7 @@ module.exports = {
         'linkBlue': '#54aeff',
         'btnGreen': '#238636',
         'errorRed': '#f85149',
+        'errorYellow': '#EBA34D',
       }
     },
   },
