@@ -5,92 +5,123 @@ const emailError = document.querySelector("#email-error");
 const pwError = document.querySelector("#pw-error");
 
 const btnSignIn = document.querySelector('#btn-sign-in');
-const btnClose = document.querySelector(".btn-close");
+const btnClose1 = document.querySelector(".btn-close1");
+const btnClose2 = document.querySelector(".btn-close2");
 
-const messageContainer = document.querySelector(".message-container")
-const message = document.querySelector('.message');
+const messageContainer1 = document.querySelector(".message-container1")
+const message1 = document.querySelector('.message1');
 
-let emailValid = false;
-let pwValid = false;
 
-messageContainer.style.display = "none";
+const messageContainer2 = document.querySelector(".message-container2")
+const message2 = document.querySelector('.message2');
+
+let emailValid = false; //Variable for keeping check of email validity.
+let pwValid = false; //Variable for keeping check of password validity.
+
+//Initial display of error and success messages.
+messageContainer1.style.display = "none";
+messageContainer2.style.display = "none";
 emailError.style.display = "none";
 pwError.style.display = "none";
 
+//Using input event to check validity as user types.
 inputMail.addEventListener("input", emailValidation);
 inputPw.addEventListener("input", passwordValidation);
 
 /*Email input validation */
 function emailValidation() {
     const mailValue = inputMail.value;
-    if (mailValue.includes(".com") && mailValue.includes("@")) {
+    if (mailValue === "") {
         inputMail.style.outline = "none";
-        inputMail.style.border = "1px solid #238636";
-        inputMail.style.background = "rgba(35, 134, 54, 0.3)";
-        emailValid = true;
-    } else {
-        inputMail.style.outline = "none";
-        inputMail.style.border = "1px solid #54aeff";
         inputMail.style.background = "#0d1117";
-        emailValid = false;
+        inputMail.style.border = "1px solid #30363d";
+    } else {
+        if (mailValue.includes(".com") && mailValue.includes("@")) {
+            inputMail.style.outline = "none";
+            inputMail.style.border = "1px solid #238636";
+            inputMail.style.background = "rgba(35, 134, 54, 0.3)";
+            emailValid = true;
+        } else {
+            inputMail.style.outline = "none";
+            inputMail.style.background = "#0d1117";
+            inputMail.style.border = "1px solid #54aeff";
+            emailValid = false;
+        }
     }
 }
 
 /*Password input validation*/
 function passwordValidation() {
     const pwValue = inputPw.value;
-    if (pwValue.length < 4 || pwValue.length > 12) {
+    if (pwValue === "") {
         inputPw.style.outline = "none";
-        inputPw.style.border = "1px solid #54aeff";
         inputPw.style.background = "#0d1117";
-        pwValid = false;
+        inputPw.style.border = "1px solid #30363d";
     } else {
-        messageContainer.style.display = "none";
-        const numbers = new RegExp(/\d/);
-        const capitals = new RegExp(/[A-Z]/);
-        console.log(numbers);
-        if (numbers.test(pwValue) && capitals.test(pwValue)) {
-            inputPw.style.outline = "none";
-            inputPw.style.border = "1px solid #238636";
-            inputPw.style.background = "rgba(35, 134, 54, 0.3)";
-            pwValid = true;
-        } else {
+        if (pwValue.length < 4 || pwValue.length > 12) {
             inputPw.style.outline = "none";
             inputPw.style.border = "1px solid #54aeff";
             inputPw.style.background = "#0d1117";
             pwValid = false;
+        } else {
+            messageContainer1.style.display = "none";
+            const numbers = new RegExp(/\d/);
+            const capitals = new RegExp(/[A-Z]/);
+            console.log(numbers);
+            if (numbers.test(pwValue) && capitals.test(pwValue)) {
+                inputPw.style.outline = "none";
+                inputPw.style.border = "1px solid #238636";
+                inputPw.style.background = "rgba(35, 134, 54, 0.3)";
+                pwValid = true;
+            } else {
+                inputPw.style.outline = "none";
+                inputPw.style.border = "1px solid #54aeff";
+                inputPw.style.background = "#0d1117";
+                pwValid = false;
+            }
         }
     }
 }
 
 
-/*Sign in button*/
+/*Sign in button validation*/
 btnSignIn.addEventListener("click", function () {
     btnSignIn.innerText = "Sign in"
     const mailValue = inputMail.value;
     const pwValue = inputPw.value;
-    if (mailValue === "" || pwValue === "") {
+    if (mailValue === "" || pwValue === "") { //Error message if either email or password not entered.
         emailError.style.display = "none";
         pwError.style.display = "none";
-        messageContainer.style.display = "flex";
-        message.innerText = "Please enter the email and password."
-    } else if (emailValid === false) {
+        messageContainer1.style.display = "flex";
+        message1.innerText = "Please enter the email and password."
+    } else if (emailValid === false) { //Invalid email.
         emailError.style.display = "block";
         pwError.style.display = "none";
-        emailError.innerText = 'Please enter a valid mail(Must contain "@" and ".com").';
-    } else if (pwValid === false) {
+        emailError.innerText = '⚠️ Please enter a valid mail(Must contain "@" and ".com").';
+    } else if (pwValid === false) { //Invalid password.
         emailError.style.display = "none";
         pwError.style.display = "block";
-        pwError.innerText = "Please enter a valid password(Must contain at least one number(0-9) and at least one uppercase alphabet)."
-    } else {
-        btnSignIn.innerText = "Signing in..."
-        emailError.style.display = "none";
-        pwError.style.display = "none";
+        pwError.innerText = "⚠️ Please enter a valid password(Must contain at least one number(0-9) and at least one uppercase alphabet)."
+    } else { //Checking if password contains the username part of the mail.
+        const userName = mailValue.substring(0, mailValue.indexOf("@"));
+        if(pwValue.includes(userName)) { //True
+            emailError.style.display = "none";
+            pwError.style.display = "none";
+            messageContainer2.style.display = "flex";
+            message2.innerText = "Success."
+            btnSignIn.innerText = "Signing in..."
+        } else { //False
+            btnSignIn.innerText = "Signing in..."
+        }
     }
 });
 
 
-/*Error message close button*/
-btnClose.addEventListener("click", function () {
-    messageContainer.style.display = "none";
+/*Error message close buttons*/
+btnClose1.addEventListener("click", function () {
+    messageContainer1.style.display = "none";
+})
+
+btnClose2.addEventListener("click", function () {
+    messageContainer2.style.display = "none";
 })
