@@ -108,7 +108,7 @@ btnSignIn.addEventListener("click", function () {
             emailError.style.display = "none";
             pwError.style.display = "none";
             messageContainer2.style.display = "flex";
-            message2.innerText = "Success."
+            message2.innerText = "Success. Signing in."
             btnSignIn.innerText = "Signing in..."
         } else { //False
             btnSignIn.innerText = "Signing in..."
